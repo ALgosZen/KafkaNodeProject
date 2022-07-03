@@ -1,0 +1,17 @@
+{
+  "name": "kafkanodeproject",
+  "version": "1.0.0",
+  "description": "Kafka produce and consumer in node",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:producer": "node ./producer/index.js",
+    "start:consumer": "node ./consumer/index.js"
+  },
+  "author": "suresh mallela",
+  "license": "ISC",
+  "dependencies": {
+    "avsc": "^5.7.4",
+    "node-rdkafka": "^2.13.0"
+  }
+}
