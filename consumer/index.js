@@ -1,4 +1,6 @@
 import kafka from 'node-rdkafka'
+import kafkaObjs from '../kafkaObjs.js'
+
 
 const consumer = kafka.KafkaConsumer({
     'group.id' : 'kafka',
@@ -12,7 +14,7 @@ consumer.on('ready', () => {
     consumer.subscribe(['NODE-PROJ-TOPIC'])
     consumer.consume()
 }).on('data', (data) => {
-    console.log(`received messages : ${data.value}`)
+    console.log(`received messages : ${kafkaObjs.fromBuffer(data.value)}`)
 })
 
 
